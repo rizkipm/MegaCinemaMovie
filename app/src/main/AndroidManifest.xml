@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="imastudio.rizki.com.cinemamovie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_megamovie"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_megamovie"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.DetailCinemaMovieActivity"
+            android:theme="@style/Theme.DesignDemo"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.DetailFavActivity"
+            android:theme="@style/Theme.DesignDemo"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".activity.FavCinemaActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTop"
+
+            android:label="@string/pref_sort_label_fav"
+            >
+
+
+        </activity>
+
+        <activity android:name=".activity.MenuSettingActivity"
+            android:label="@string/settings"
+            android:theme="@style/Theme.DesignDemo"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+
+        <provider
+            android:authorities="imastudio.rizki.com.cinemamovie"
+            android:name=".contentdata.MovieProvider"/>
+
+    </application>
+
+</manifest>
